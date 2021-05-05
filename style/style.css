@@ -1,0 +1,394 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    color: #252525;
+    scroll-behavior: smooth;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+}
+main{
+    background-color: #f7f7f7;
+    display: grid;
+    grid-template-areas: "nav" "header" "about" "works" "equips" "contact" "footer";
+    grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+}
+
+.menu{
+    grid-area: nav;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background-color: #252525;
+    transition: all 1s ease;
+}
+
+.logo{
+    color: #f7f7f7;
+    font-size: 19px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.menu ul{
+    display: flex;
+    align-items: center;
+    transition: all 1s ease;
+}
+
+.menu ul li a{
+    color: #f7f7f7;
+    margin-left: 16px;
+    padding: 15px 10px;
+}
+
+.burger{
+    display: none;
+}
+
+.header{
+    padding: 0px 16px;
+    grid-area: header;
+    background-image: url(../img/kal-visuals-2SQxrrQqpEQ-unsplash.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom: 5px solid #252525;
+}
+
+.header-card{
+    padding: 100px 0px;
+    background-color: rgba(25, 25, 25, 0.4);
+}
+
+.header-card h1{
+    font-size: 4em;
+    color: #f7f7f7;
+    font-weight: bold;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.header-card p{
+    padding-left: 32px;
+    color: #f7f7f7;
+    font-size: 2em;
+    line-height: 1;
+}
+
+@media screen and (max-width: 760px){
+    .burger{
+        display: block;
+    }
+
+    .burger > div{
+        width: 20px;
+        height: 3px;
+        margin-bottom: 5px;
+        background-color: #f7f7f7;
+        transition: all .5s ease;
+    }
+
+    .menu ul{
+        position: absolute;
+        right: 0;
+        top: 60px;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 470px;
+        width: 50%;
+        background-color: #252525;
+        transform: translateX(100%);
+    }
+
+    .menu ul li{
+        opacity: 0;
+    }
+}
+
+/* ===== WORKS ===== */
+
+.works{
+    grid-area: works;
+    padding: 60px 16px;
+    border-bottom: 5px solid #252525;
+}
+
+.titulo{
+    font-size: 4em;
+    line-height: 1;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+}
+
+.work-list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.work-list img{
+    height: 250px;
+    width: 425px;
+}
+.work-info{
+    text-align: center;
+}
+
+.work-info h3{
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin: 8px 0;
+}
+
+.work-info a{
+    display: block;
+    width: 100px;
+    padding: 5px 10px;
+    border-radius: 2px;
+    color: #f7f7f7;
+    background: #252525;
+    margin: 8px auto;
+}
+
+@media screen and (max-width: 760px){
+    .work-list{
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== EQUIPAMENTOS ===== */
+
+.equips{
+    grid-area: equips;
+    padding: 60px 16px;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 20px;
+    border-bottom: 5px solid #252525;
+}
+
+.equip-list{
+    grid-column: 1;
+    height: 370px;
+    overflow-y: auto;
+}
+
+/* width */
+.equip-list::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+.equip-list::-webkit-scrollbar-track {
+    background: #f7f7f7; 
+  }
+   
+  /* Handle */
+.equip-list::-webkit-scrollbar-thumb {
+    background: #252525; 
+  }
+.equip-description{
+    grid-column: 2;
+}
+
+.equip-description section{
+    margin-bottom: 32px;
+    display: none;
+}
+
+.equip-description h3{
+    margin-bottom: 8px;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.equip-description h3::before{
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 10px;
+    background-color: #252525;
+    margin-right: 8px;
+}
+
+.equip-description p{
+    margin-left: 28px;
+}
+
+@media screen and (max-width: 760px){
+    .equips{
+        grid-template-columns: 120px 1fr;
+    }
+
+    .titulo{
+        font-size: 2em;
+    }
+
+    .equip-list{
+        grid-column: 1;
+    }
+
+    .equip-description{
+        grid-column: 2;
+    }
+}
+
+/* ===== SOBRE ===== */
+
+.about{
+    grid-area: about;
+    padding: 60px 16px;
+    border-bottom: 5px solid #252525;
+}
+
+
+
+/* =====    CONTACT ===== */
+
+.contact{
+    grid-area: contact;
+    padding: 60px 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.mapa{
+    grid-column: 1;
+}
+
+.dados{
+    grid-column: 2;
+}
+
+.dados li{
+    margin-bottom: 16px;
+}
+
+.dados li::before{
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 10px;
+    margin-right: 8px;
+    background-color: #252525;
+}
+
+@media screen and (max-width: 760px){
+    .contact{
+        grid-template-columns: 1fr;
+    }
+
+    .mapa iframe{
+        width: 400px;
+    }
+    .dados{
+        grid-column: 1;
+    }
+}
+
+/* =====    FOOTER  ===== */
+
+.footer{
+    grid-area: footer;
+    padding: 60px 16px;
+    background-color: #252525;
+    text-align: center;
+}
+
+.sociais a{
+    color: #f7f7f7;
+    font-size: 32px;
+    margin-right: 16px;
+}
+
+.copy p{
+    margin-top: 16px;
+    color: #f7f7f7;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+
+
+/* ===== CLASSES ===== */
+
+.equip-description section.ativo{
+    display: block;
+    animation: showSection .5s forwards;
+}
+
+.menu.navFixed{
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: #f7f7f7;
+}
+
+.menu.navFixed .logo{
+    color: #252525;
+}
+
+.menu.navFixed .menu-list{
+    background-color: #f7f7f7;
+}
+
+.menu.navFixed .menu-list li a{
+    color: #252525;
+}
+.menu.navFixed .burger > div{
+    background-color: #252525;
+}
+
+.menu ul.ativo{
+    transform: translateX(0%);
+}
+
+.burger.animation .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+
+.burger.animation .line2{
+    opacity: 0;
+}
+
+.burger.animation .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}
+
+
+/* =====    ANIMAÇÕES   ===== */
+
+@keyframes showSection{
+    from{
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
